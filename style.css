@@ -1,0 +1,353 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100vw;
+}
+
+#loader{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all ease .1s;
+}
+
+#loader1{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: 11;
+    background-color: #F5E41B;
+}
+#loader2{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    background-color: #F5E41B;
+}
+
+#loader video{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    transition: all .1s linear;
+}
+
+#loader-content{
+    font-size: 3.2vw;
+    font-weight: 200;
+    line-height: 5vw;
+    letter-spacing: -.6vw;
+    color: #fff;
+    z-index: 10;
+}
+
+#loader-content h1{
+    font-weight: 200;
+    transition: all ease .1s;
+}
+
+#page1{
+    height: 100vh;
+    width: 100vw;
+    background-color: #F5E41B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+#page1-content{
+    font-size: 3.2vw;
+    font-weight: 200;
+    line-height: 5vw;
+    letter-spacing: -.6vw;
+}
+
+#page1-content h1{
+    font-weight: 200;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw 4.5vw;
+    z-index: 10;
+}
+
+nav h1{
+    font-weight: 900;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 6vw;
+    font-weight: 100;
+}
+
+ul h3{
+    font-weight: 200;
+    font-size: 1.3vw;
+    text-transform: uppercase;
+}
+
+#page1-footer{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 200;
+}
+
+#page1-footer h1{
+    font-weight: 200;
+    font-size: 1.3vw;
+    padding: 2vw 5.2vw;
+}
+
+#page2{
+    /* border: 2px solid yellow; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+}
+
+#elem{
+    /* background-color: rgb(5, 52, 52); */
+    width: 100vw;
+    position: relative;
+    cursor: pointer;
+}
+
+#elem h1{
+    font-size: 6.5vw;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 5.2vw;
+    position: relative;
+    z-index: 10;
+    font-style: normal;
+    transition: all ease .2s;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#elem #moving{
+    background-color: #F5E41B;
+    width: 100%;
+    white-space: nowrap;
+    padding: 8px 0;
+    position: absolute;
+    top: 50%;
+    overflow: hidden;
+    transform: translate(0,-50%) scaleY(0);
+    /* opacity: 0;  */
+    transition: all ease 0.5s;
+}
+
+#elem #moving #moving-in{
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: scroll 8s linear infinite;
+}
+
+#elem #moving #moving-in p{
+    color: #000;
+    display: inline-block;
+    font-size: 1.2vw;
+    text-transform: uppercase;
+    margin-right: 2.5vw;
+}
+
+#elem:hover #moving{
+    transform: translate(0,-50%) scaleY(1);
+    overflow: hidden;
+}
+#elem:hover h1{
+    font-style: italic;
+    color: #000;
+}
+
+@keyframes scroll {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2.2vw;
+    /* border: 2px solid red; */
+}
+
+#page3-left{
+    /* margin: 10px 20px; */
+    /* margin-right: 20px; */
+}
+#page3-middle{
+    /* margin-right: 20px; */
+    /* margin: 10px 20px; */
+}
+#page3-right{
+    /* margin: 10px 20px; */
+}
+
+#page3 #image-div{
+    /* margin: 10px 20px; */
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 1.5vw 1vw;
+    cursor: pointer;
+}
+
+#image-div img{
+    object-fit: cover;
+    width: 370px;
+    /* border: 2px solid green; */
+}
+
+#overlay{
+    width: 98%;
+    height: 100%;
+    position: absolute;
+    background-color: #000000db;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-weight: 200;
+    opacity: 0;
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-style: italic;
+    line-height: 3vw;
+    transition: all ease .5s;
+}
+
+#image-div:hover #overlay{
+    opacity: 1;
+}
+
+#back-to-top{
+    text-align: center;
+    margin: 4vw;
+    font-size: 1.6vw;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+footer{
+    width: 100%;
+    /* height: 20vh; */
+    padding: 4vw 6vw;
+    /* border: 2px solid red; */
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer-right{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer p{
+    text-transform: uppercase;
+    font-size: 1.3vw;
+}
+
+
+@media (max-width:780px) {
+    #loader-content h1{
+        font-size: 13vw;
+        line-height: 10vw;
+        font-weight: 200;
+        transition: all ease .1s;
+    }
+    #page1{
+        height: 90vh;
+    }
+    #page1-content h1{
+        font-size: 13vw;
+        line-height: 10vw;
+    }
+    #page1-footer h1{
+        font-size: 5vw;
+    }
+    nav ul{
+        display: none;
+    }
+    #page2{
+        height: 100vh;
+    }
+    #page2 h1{
+        font-size: 12vw;
+        line-height: 10vw;
+    }
+#page3-left{
+    margin: auto;
+}
+#page3-middle{
+    margin: auto;
+}
+#page3-right{
+    margin: auto;
+}
+footer{
+    width: 100vw;
+    flex-direction: column;
+    gap: 16px;
+}
+#footer-right{
+    flex-direction: column;
+    gap: 16px;
+}
+#back-to-top{
+    font-size: 4vw;
+}
+footer p{
+    font-size: 3vw;
+    /* padding: 1vw; */
+}
+}
